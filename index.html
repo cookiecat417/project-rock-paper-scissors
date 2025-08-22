@@ -81,10 +81,21 @@
         playRound(humanSelection, computerSelection);
 
         function playGame() {
-            
+            for(let i = 0; i < 5; i++) {
+                const humanSelection = getHumanChoice(); 
+                const computerSelection = getComputerChoice()
+                playRound(humanSelection, computerSelection);
+            }
+            if(humanScore > computerScore){
+                console.log("Game over! You won the game!");
+            } else if (computerScore > humanScore) {
+                console.log("Game over! Computer won the game!");
+            } else {
+                console.log("Game over! It's a tie!");
+            }
         }
-
-
+        playGame();
+    
         console.log(getComputerChoice())
         console.log(getHumanChoice())
     </script>
